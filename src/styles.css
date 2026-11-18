@@ -318,9 +318,17 @@
   .programme__item:nth-child(even) {
     background: var(--surface);
   }
-  .programme__item:target { background: var(--surface); box-shadow: inset 4px 0 0 var(--accent); }
-  .speaker-card:is(:hover, :focus-within) { border-color: var(--accent); }
-  .speaker-card h3, .ticket-card h3 { font-weight: 650; }
+  .programme__item:target {
+    background: var(--surface);
+    box-shadow: inset 4px 0 0 var(--accent);
+  }
+  .speaker-card:is(:hover, :focus-within) {
+    border-color: var(--accent);
+  }
+  .speaker-card h3,
+  .ticket-card h3 {
+    font-weight: 650;
+  }
   .programme__time {
     color: var(--accent);
     font:

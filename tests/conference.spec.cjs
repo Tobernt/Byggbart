@@ -104,7 +104,12 @@ test('rehearsal timer, local portfolio and source reading work', async ({ page, 
   await expect(page.locator('#timer-status')).toHaveText('Pausad.');
   await page.locator('#timer-reset').click();
   await expect(page.locator('#clock')).toHaveText('03:00');
-  if (require('node:fs').existsSync(require('node:path').resolve(__dirname, '../../SoftwareEngineerPortfolio/index.html'))) expect((await request.get('/portfolio/')).ok()).toBe(true);
+  if (
+    require('node:fs').existsSync(
+      require('node:path').resolve(__dirname, '../../SoftwareEngineerPortfolio/index.html'),
+    )
+  )
+    expect((await request.get('/portfolio/')).ok()).toBe(true);
   expect((await request.get('/src/styles.css')).ok()).toBe(true);
   expect((await request.get('/.git/config')).status()).toBe(404);
   expect((await request.get('/assets/..%5c.git%5cconfig')).status()).toBe(404);
