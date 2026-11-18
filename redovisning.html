@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Lokalt övningsstöd för en tre minuter lång redovisning av Byggbart, BCU26D:s konferensuppgift.">
+    <title>Öva tre minuter — Byggbart</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <style>
+      @layer components {
+        body {
+          margin: 0;
+          background: #edf5f8;
+          color: #142b40;
+          font:
+            17px/1.65 'Segoe UI',
+            sans-serif;
+        }
+        * {
+          box-sizing: border-box;
+        }
+        main {
+          max-width: 1000px;
+          margin: auto;
+          padding: 28px 22px 60px;
+        }
+        h1,
+        h2 {
+          line-height: 1.2;
+        }
+        a {
+          color: #006489;
+          text-underline-offset: 4px;
+        }
+        button,
+        a {
+          touch-action: manipulation;
+        }
+        :is(a, button, summary):focus-visible {
+          outline: 3px solid #006489;
+          outline-offset: 5px;
+        }
+        button {
+          font: inherit;
+          background: #006489;
+          color: white;
+          border: 0;
+          padding: 12px 18px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        code {
+          font:
+            0.9em Consolas,
+            monospace;
+          overflow-wrap: anywhere;
+        }
+        pre {
+          padding: 18px;
+          background: #142b40;
+          color: #edf5f8;
+          white-space: pre-wrap;
+          overflow-wrap: anywhere;
+          border-radius: 5px;
+        }
+        .rehearsal__bar {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 16px;
+          padding: 20px;
+          border: 1px solid #8aa6b8;
+          background: white;
+          border-radius: 8px;
+        }
+        .rehearsal__timer {
+          font:
+            700 2rem Consolas,
+            monospace;
+          min-width: 100px;
+        }
+        .rehearsal__links {
+          display: flex;
+          gap: 18px;
+          flex-wrap: wrap;
+          margin-block: 20px 32px;
+        }
+        .rehearsal__cue {
+          border-top: 1px solid #8aa6b8;
+          padding-block: 12px 20px;
+        }
+        .rehearsal__time {
+          font:
+            700 0.9rem Consolas,
+            monospace;
+          color: #006489;
+        }
+        .rehearsal__note {
+          color: #40566a;
+        }
+        details {
+          background: white;
+          border: 1px solid #8aa6b8;
+          border-radius: 6px;
+          margin-top: 16px;
+          padding: 16px;
+        }
+        summary {
+          cursor: pointer;
+          font-weight: 700;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="rehearsal__note">BCU26D · Inlämningsuppgift 2 · Lokalt övningsstöd</p>
+      <h1>En tydlig demo på tre minuter.</h1>
+      <p>
+        Visa konferenssidan när du delar skärm. Behåll den här sidan som stöd på din egen skärm.
+        Prova först och byt formuleringar till dina egna ord.
+      </p>
+      <div class="rehearsal__bar">
+        <output class="rehearsal__timer" id="clock" aria-label="Tid kvar">03:00</output
+        ><button type="button" id="timer-toggle">Starta övningen</button
+        ><button type="button" id="timer-reset">Börja om</button
+        ><span id="timer-status" role="status">Redo för tre minuter.</span>
+      </div>
+      <nav class="rehearsal__links" aria-label="Öppna demo och underlag">
+        <a href="index.html" target="_blank" rel="noopener">Öppna konferenssidan ↗</a
+        ><a href="/portfolio/" target="_blank" rel="noopener">Öppna lokala portfolion ↗</a
+        ><a href="docs/REDOVISNING.md">Fullständigt manus</a
+        ><a href="src/styles.css" target="_blank" rel="noopener">Öppna CSS-källan ↗</a>
+      </nav>
+      <section class="rehearsal__cue">
+        <p class="rehearsal__time">00:00–00:25 · Visa helheten</p>
+        <h2>Vad är sidan till för?</h2>
+        <p>
+          ”Det här är Byggbart, en fiktiv konferens om backend och systemdesign. Besökaren kan läsa
+          fem programpunkter, möta fem talare, jämföra tre biljetter och hitta praktisk information.
+          Temat knyter an till mitt intresse för systemutveckling.”
+        </p>
+      </section>
+      <section class="rehearsal__cue">
+        <p class="rehearsal__time">00:25–01:00 · Dra i webbläsarfönstret</p>
+        <h2>Visa desktop, tablet och mobil.</h2>
+        <p>
+          ”Jag använder Flexbox för menyn och CSS Grid för talarna. På stora skärmar visas tre
+          talarkort bredvid varandra, sedan två och sist ett. Programmet får tiden ovanför texten i
+          mobilvy. Samma innehåll finns kvar utan horisontell scroll.”
+        </p>
+        <p class="rehearsal__note">
+          Gör: dra från brett fönster till ungefär 768 och 320 px. Öppna mobilmenyn och hoppa till
+          Talare.
+        </p>
+      </section>
+      <section class="rehearsal__cue">
+        <p class="rehearsal__time">01:00–01:40 · Mus och tangentbord</p>
+        <h2>Förklara hover-effekten.</h2>
+        <p>
+          ”Ett talarkort visar mer information och får färg när jag håller musen över det. Med Tab
+          får länken fokus och <code>:focus-within</code> ger samma effekt. Därför är
+          extrainformationen inte beroende av en mus.”
+        </p>
+        <pre><code>.speaker-card:is(:hover, :focus-within)
+  .speaker-card__details {
+  grid-template-rows: 1fr;
+}</code></pre>
+      </section>
+      <section class="rehearsal__cue">
+        <p class="rehearsal__time">01:40–02:20 · Visa CSS-källan</p>
+        <h2>Tre avancerade selektorer.</h2>
+        <p>
+          ”Syskonselektorn ger en linje mellan programpunkterna. <code>:nth-child(even)</code> gör
+          varannan rad lättare att följa. Biljettens data-attribut väljer vilket kort som markeras,
+          och <code>::before</code> skapar etiketten. Jag har skrivit egna BEM-klasser i Tailwinds
+          komponentlager.”
+        </p>
+        <pre><code>.programme__item + .programme__item { border-top: …; }
+.programme__item:nth-child(even) { background: …; }
+.ticket-card[data-featured='true']::before { content: …; }</code></pre>
+      </section>
+      <section class="rehearsal__cue">
+        <p class="rehearsal__time">02:20–03:00 · Tema och tillgänglighet</p>
+        <h2>Avsluta med medvetna val.</h2>
+        <p>
+          ”CSS-variabler styr färgerna och <code>prefers-color-scheme</code> följer systemets tema.
+          Knappen låter användaren välja själv. Introduktionens CSS-animation stängs av med
+          <code>prefers-reduced-motion</code>. Jag har också lagt till en
+          hoppa-till-innehållet-länk, synlig tangentbordsfokus och korrekta bildattribut.”
+        </p>
+        <p class="rehearsal__note">
+          Gör: växla tema. Säg sedan: ”Det viktigaste jag tar med mig är att responsivitet och
+          tillgänglighet behöver planeras tillsammans.”
+        </p>
+      </section>
+      <details>
+        <summary>Vanliga följdfrågor att öva på</summary>
+        <ul>
+          <li>Grid för två dimensioner; Flexbox för en rad som kan brytas.</li>
+          <li>
+            <code>+</code> väljer nästa intilliggande syskon, inte alla efterföljande element.
+          </li>
+          <li><code>:focus-within</code> gäller föräldern när ett barn får fokus.</li>
+          <li>
+            <code>::before</code> är en visuell etikett. Biljettens viktiga innehåll finns i HTML.
+          </li>
+          <li>
+            CSS fungerar även utan JavaScript. Temat följer då systemet och navigeringen visas utan
+            menyknapp.
+          </li>
+          <li>Att AI hjälpt till med koden ersätter inte att kunna förklara koden själv.</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Om läraren frågar om portfolion</summary>
+        <p>
+          Portfolion är en separat uppgift. Den visar min profil inom backend och automation, fyra
+          projekt, erfarenhet och ett kontaktformulär som förbereder ett mejlutkast. Den lokala
+          länken ovan öppnar den i samma server när portfolio-mappen finns bredvid
+          konferensprojektet.
+        </p>
+      </details>
+    </main>
+    <script>
+      let remaining = 180,
+        interval = null;
+      const clock = document.querySelector('#clock'),
+        toggle = document.querySelector('#timer-toggle'),
+        status = document.querySelector('#timer-status');
+      function draw() {
+        clock.textContent =
+          String(Math.floor(remaining / 60)).padStart(2, '0') +
+          ':' +
+          String(remaining % 60).padStart(2, '0');
+      }
+      toggle.addEventListener('click', () => {
+        if (interval) {
+          clearInterval(interval);
+          interval = null;
+          toggle.textContent = 'Fortsätt';
+          status.textContent = 'Pausad.';
+          return;
+        }
+        if (!remaining) remaining = 180;
+        toggle.textContent = 'Pausa';
+        status.textContent = 'Övningen pågår.';
+        interval = setInterval(() => {
+          remaining--;
+          draw();
+          if (!remaining) {
+            clearInterval(interval);
+            interval = null;
+            toggle.textContent = 'Starta igen';
+            status.textContent = 'Tre minuter har gått. Avsluta demon.';
+          }
+        }, 1000);
+      });
+      document.querySelector('#timer-reset').addEventListener('click', () => {
+        clearInterval(interval);
+        interval = null;
+        remaining = 180;
+        draw();
+        toggle.textContent = 'Starta övningen';
+        status.textContent = 'Redo för tre minuter.';
+      });
+    </script>
+  </body>
+</html>

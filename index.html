@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Byggbart är en fiktiv konferens om backend, databaser, säkerhet och hållbara digitala system. Utforska program, talare, biljetter och praktisk information.">
+    <meta name="theme-color" content="#edf5f8">
+    <title>Byggbart 2027 — systemen bakom upplevelsen</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="src/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#start"
+          ><span class="brand__mark" aria-hidden="true">↳</span>BYGGBART</a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="navigation"
+          aria-expanded="false"
+          hidden
+        >
+          Meny
+        </button>
+        <nav class="site-nav" id="navigation" aria-label="Huvudnavigation">
+          <a href="#program">Program</a><a href="#talare">Talare</a
+          ><a href="#biljetter">Biljetter</a><a href="#praktiskt">Praktiskt</a>
+          <button class="theme-toggle" type="button" aria-pressed="false" hidden>Mörkt läge</button>
+        </nav>
+      </div>
+    </header>
+    <main class="page-shell" id="innehall" tabindex="-1">
+      <section class="hero" id="start" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Backend · systemdesign · människor</p>
+          <h1 class="hero__title" id="hero-title">Det som får resten att fungera.</h1>
+          <p class="hero__lead">
+            En dag för dig som bygger det användaren inte ser, men alltid märker. Från begripliga
+            API:er till system som håller när verkligheten knackar på.
+          </p>
+          <div class="hero__meta">
+            <time datetime="2027-05-14">14 maj 2027</time><span>Borås · Textilforum</span>
+          </div>
+          <div class="hero__actions">
+            <a class="button" href="#program">Utforska programmet</a
+            ><a class="button button--secondary" href="#biljetter">Jämför biljetter</a>
+          </div>
+        </div>
+        <figure class="pipeline">
+          <figcaption class="pipeline__caption">Bakom ett till synes enkelt anrop</figcaption>
+          <ol class="pipeline__list">
+            <li class="pipeline__step"><strong>Anrop</strong><span>en fråga</span></li>
+            <li class="pipeline__step"><strong>API</strong><span>ett kontrakt</span></li>
+            <li class="pipeline__step"><strong>Data</strong><span>ett sammanhang</span></li>
+            <li class="pipeline__step"><strong>Svar</strong><span>en upplevelse</span></li>
+          </ol>
+          <p class="pipeline__note">Bra system börjar med bra samtal. Vi tar dem här.</p>
+        </figure>
+      </section>
+      <section class="section" id="program" aria-labelledby="program-title">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Dagens flöde</p>
+            <h2 id="program-title">Från idé till stabil drift.</h2>
+          </div>
+          <p class="section__intro">
+            Fem perspektiv på mjukvara som ska fungera även efter första demon. Dörrarna öppnar
+            08.30.
+          </p>
+        </div>
+        <ol class="programme">
+          <li class="programme__item" id="session-api">
+            <time class="programme__time" datetime="2027-05-14T09:00">09.00</time>
+            <article>
+              <h3>API:er som är lätta att leva med</h3>
+              <p class="programme__speaker">Lina Fors · API-arkitekt</p>
+              <p>
+                Om tydliga kontrakt, versionshantering och idempotens. Så gör du nästa integration
+                enklare att förstå och underhålla.
+              </p>
+            </article>
+          </li>
+          <li class="programme__item" id="session-data">
+            <time class="programme__time" datetime="2027-05-14T10:15">10.15</time>
+            <article>
+              <h3>Databasen är en del av designen</h3>
+              <p class="programme__speaker">Amir Lund · Databasutvecklare</p>
+              <p>
+                Index, datamodeller och säkra migreringar. Vi följer en långsam fråga hela vägen
+                till en begriplig lösning.
+              </p>
+            </article>
+          </li>
+          <li class="programme__item" id="session-security">
+            <time class="programme__time" datetime="2027-05-14T11:15">11.15</time>
+            <article>
+              <h3>Säkerhet i det vardagliga arbetet</h3>
+              <p class="programme__speaker">Sara Eng · Säkerhetsingenjör</p>
+              <p>
+                Behörigheter, validering och felhantering med konkreta exempel. Små beslut som gör
+                stor skillnad för ett systems motståndskraft.
+              </p>
+            </article>
+          </li>
+          <li class="programme__item" id="session-operations">
+            <time class="programme__time" datetime="2027-05-14T13:15">13.15</time>
+            <article>
+              <h3>Från commit till stabil drift</h3>
+              <p class="programme__speaker">Joel Berg · Plattformstekniker</p>
+              <p>
+                Tester, leveransflöden och observerbarhet. Hur märker vi att något fungerar, och hur
+                återhämtar vi oss när det inte gör det?
+              </p>
+            </article>
+          </li>
+          <li class="programme__item" id="session-ai">
+            <time class="programme__time" datetime="2027-05-14T14:30">14.30</time>
+            <article>
+              <h3>AI i ett begripligt system</h3>
+              <p class="programme__speaker">Nima Dahl · Mjukvaruingenjör</p>
+              <p>
+                Bygg AI-funktioner med tydliga gränser, granskningsbara resultat och fungerande
+                reservvägar när modellen inte räcker till.
+              </p>
+            </article>
+          </li>
+        </ol>
+      </section>
+      <section class="section" id="talare" aria-labelledby="talare-title">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Människorna bakom systemen</p>
+            <h2 id="talare-title">Fem röster. Samma nyfikenhet.</h2>
+          </div>
+          <p class="section__intro">
+            För musen över ett kort eller tabba till dess länk för att läsa mer om talaren.
+          </p>
+        </div>
+        <div class="speaker-grid">
+          <article class="speaker-card">
+            <img
+              class="speaker-card__portrait"
+              src="assets/lina.svg"
+              alt="Illustration av den fiktiva talaren Lina Fors"
+              width="320"
+              height="280"
+              loading="lazy">
+            <h3>Lina Fors</h3>
+            <p class="speaker-card__role">API-arkitekt · Kontrakt &amp; integration</p>
+            <div class="speaker-card__details">
+              <p>
+                Gör komplexa integrationer lättare att resonera om. Hennes favoritfråga är: vad
+                lovar vårt API egentligen?
+              </p>
+            </div>
+            <a class="speaker-card__link" href="#session-api">Linas föreläsning →</a>
+          </article>
+          <article class="speaker-card">
+            <img
+              class="speaker-card__portrait"
+              src="assets/amir.svg"
+              alt="Illustration av den fiktiva talaren Amir Lund"
+              width="320"
+              height="280"
+              loading="lazy">
+            <h3>Amir Lund</h3>
+            <p class="speaker-card__role">Databasutvecklare · Modellering &amp; SQL</p>
+            <div class="speaker-card__details">
+              <p>
+                Arbetar med modeller som går att förändra. Han visar hur en genomtänkt fråga kan
+                vara bättre än ännu en cache.
+              </p>
+            </div>
+            <a class="speaker-card__link" href="#session-data">Amirs föreläsning →</a>
+          </article>
+          <article class="speaker-card">
+            <img
+              class="speaker-card__portrait"
+              src="assets/sara.svg"
+              alt="Illustration av den fiktiva talaren Sara Eng"
+              width="320"
+              height="280"
+              loading="lazy">
+            <h3>Sara Eng</h3>
+            <p class="speaker-card__role">Säkerhetsingenjör · Tillit &amp; behörighet</p>
+            <div class="speaker-card__details">
+              <p>
+                Översätter hotbilder till praktiska utvecklingsbeslut. Säkerhet ska vara ett
+                gemensamt språk i hela teamet.
+              </p>
+            </div>
+            <a class="speaker-card__link" href="#session-security">Saras föreläsning →</a>
+          </article>
+          <article class="speaker-card">
+            <img
+              class="speaker-card__portrait"
+              src="assets/joel.svg"
+              alt="Illustration av den fiktiva talaren Joel Berg"
+              width="320"
+              height="280"
+              loading="lazy">
+            <h3>Joel Berg</h3>
+            <p class="speaker-card__role">Plattformstekniker · Leverans &amp; drift</p>
+            <div class="speaker-card__details">
+              <p>
+                Bygger leveransflöden som hjälper människor att fatta bra beslut. Föredrar tydliga
+                larm framför fler larm.
+              </p>
+            </div>
+            <a class="speaker-card__link" href="#session-operations">Joels föreläsning →</a>
+          </article>
+          <article class="speaker-card">
+            <img
+              class="speaker-card__portrait"
+              src="assets/nima.svg"
+              alt="Illustration av den fiktiva talaren Nima Dahl"
+              width="320"
+              height="280"
+              loading="lazy">
+            <h3>Nima Dahl</h3>
+            <p class="speaker-card__role">Mjukvaruingenjör · AI &amp; systemgränser</p>
+            <div class="speaker-card__details">
+              <p>
+                Utforskar hur AI kan vara en del av ett begripligt flöde. Är lika intresserad av
+                reservvägen som av modellen.
+              </p>
+            </div>
+            <a class="speaker-card__link" href="#session-ai">Nimas föreläsning →</a>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="biljetter" aria-labelledby="biljetter-title">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Hitta din plats</p>
+            <h2 id="biljetter-title">En dag. Tre sätt att delta.</h2>
+          </div>
+          <p class="section__intro">
+            Fiktiva priser inklusive moms. Lunch serveras 12.00–13.00 och dagen avslutas 16.00.
+          </p>
+        </div>
+        <div class="ticket-grid">
+          <article class="ticket-card">
+            <h3>Student</h3>
+            <p class="ticket-card__price">350 kr</p>
+            <p class="ticket-card__description">För dig som är på väg in i yrket.</p>
+            <ul class="ticket-card__list">
+              <li>Alla fem föreläsningar</li>
+              <li>Fika och lunch</li>
+              <li>Samtal med talarna</li>
+            </ul>
+          </article>
+          <article class="ticket-card" data-featured="true">
+            <h3>Utvecklare</h3>
+            <p class="ticket-card__price">950 kr</p>
+            <p class="ticket-card__description">För dig som bygger system i vardagen.</p>
+            <ul class="ticket-card__list">
+              <li>Hela konferensprogrammet</li>
+              <li>Fika och lunch</li>
+              <li>Gemensam frågestund</li>
+            </ul>
+          </article>
+          <article class="ticket-card">
+            <h3>Team</h3>
+            <p class="ticket-card__price">2 200 kr</p>
+            <p class="ticket-card__description">Tre platser för en gemensam diskussion.</p>
+            <ul class="ticket-card__list">
+              <li>Tre utvecklarbiljetter</li>
+              <li>Fika och lunch för alla tre</li>
+              <li>Material för gemensam reflektion</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="section venue" id="praktiskt" aria-labelledby="praktiskt-title">
+        <div>
+          <p class="eyebrow">Bra att veta innan du kommer</p>
+          <h2 id="praktiskt-title">Vi ses i Borås.</h2>
+          <dl class="venue__facts">
+            <div>
+              <dt>Plats</dt>
+              <dd>Textilforum, Verkstadsgatan 12, 504 51 Borås</dd>
+            </div>
+            <div>
+              <dt>Tider</dt>
+              <dd>Insläpp 08.30 · Program 09.00–16.00</dd>
+            </div>
+            <div>
+              <dt>Mat</dt>
+              <dd>Lunch och fika ingår i samtliga biljetter. Vegetariskt alternativ finns.</dd>
+            </div>
+            <div>
+              <dt>Tillgänglighet</dt>
+              <dd>
+                Stegfri entré, hiss och tillgänglig toalett ingår i lokalens fiktiva planering.
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <figure>
+          <img
+            class="venue__map"
+            src="assets/karta.svg"
+            alt="Illustrativ statisk karta med stationen till vänster och Textilforums entré till höger längs Verkstadsgatan"
+            width="640"
+            height="440"
+            loading="lazy">
+          <figcaption class="venue__caption">
+            Statisk översiktskarta. Platsen och adressen ingår i ett fiktivt konferenskoncept.
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div>
+          <strong>BYGGBART / 2027</strong>
+          <p class="site-footer__note">
+            Ett skolprojekt av Tobias Berntsson. Konferensen, personerna, platsen och priserna är
+            fiktiva. Ingen bokning eller betalning görs.
+          </p>
+        </div>
+        <a href="#start">Till sidans början ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

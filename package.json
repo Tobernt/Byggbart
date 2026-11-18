@@ -1,0 +1,24 @@
+{
+  "name": "byggbart-conference",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lokal, fiktiv backendkonferens för BCU26D:s konferensuppgift.",
+  "scripts": {
+    "dev": "tailwindcss -i src/styles.css -o assets/styles.css --watch",
+    "build": "tailwindcss -i src/styles.css -o assets/styles.css --minify",
+    "start": "node server.cjs --open",
+    "serve:test": "node server.cjs --port=4399",
+    "validate": "html-validate index.html redovisning.html",
+    "format": "prettier --write index.html redovisning.html src server.cjs tests docs README.md",
+    "test": "playwright test",
+    "audit": "node scripts/audit.cjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "1.65.0",
+    "html-validate": "^11.21.0",
+    "lighthouse": "^13.6.0",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^3.4.10"
+  }
+}
