@@ -1,0 +1,30 @@
+{
+  "browser": "158.0.8127.18",
+  "method": "chrome.tabs.setZoom",
+  "checks": [
+    {
+      "zoom": 1,
+      "outerWidth": 1440,
+      "innerWidth": 1424,
+      "scrollWidth": 1424,
+      "devicePixelRatio": 1,
+      "overlap": false
+    },
+    {
+      "zoom": 2,
+      "outerWidth": 1440,
+      "innerWidth": 712,
+      "scrollWidth": 712,
+      "devicePixelRatio": 2,
+      "overlap": false
+    },
+    {
+      "zoom": 3,
+      "outerWidth": 1440,
+      "innerWidth": 474,
+      "scrollWidth": 474,
+      "devicePixelRatio": 3,
+      "overlap": false
+    }
+  ]
+}
