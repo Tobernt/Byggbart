@@ -62,6 +62,8 @@ test('keyboard hover equivalent, reduced motion, theme selection and mobile navi
   ).toBeGreaterThan(30);
   await expect(page.locator('.pipeline')).toHaveCSS('animation-name', 'none');
   await page.locator('.theme-toggle').click();
+  await expect(page.locator('.theme-toggle')).toHaveText('Mörkt läge');
+  await expect(page.locator('.theme-toggle')).toHaveAttribute('aria-pressed', 'true');
   const selected = await page.locator('html').getAttribute('data-theme');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-theme', selected);
@@ -94,6 +96,20 @@ test('page remains useful without JavaScript and at zoom-equivalent viewport wid
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
       width,
     );
+  }
+});
+test('all desktop controls follow DOM tab order and have visible custom focus', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('/');
+  const controls = await page.locator('a,button').all();
+  for (const control of controls) {
+    if (!(await control.isVisible())) continue;
+    await page.keyboard.press('Tab');
+    await expect(control).toBeFocused();
+    await expect(control).toHaveCSS('outline-style', 'solid');
+    await expect(control).toHaveCSS('outline-width', '3px');
   }
 });
 test('rehearsal timer, local portfolio and source reading work', async ({ page, request }) => {

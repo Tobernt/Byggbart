@@ -178,6 +178,10 @@
     color: var(--ink);
     background: transparent;
   }
+  .theme-toggle[aria-pressed='true'] {
+    color: var(--on-accent);
+    background: var(--accent);
+  }
   .menu-toggle[hidden],
   .theme-toggle[hidden] {
     display: none;

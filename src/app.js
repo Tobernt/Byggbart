@@ -26,7 +26,9 @@ function syncTheme() {
     ? document.documentElement.dataset.theme === 'dark'
     : systemDark.matches;
   theme.setAttribute('aria-pressed', String(dark));
-  theme.textContent = dark ? 'Ljust läge' : 'Mörkt läge';
+  // En toggle behåller sitt namn; aria-pressed beskriver det valda tillståndet.
+  theme.textContent = 'Mörkt läge';
+  theme.title = dark ? 'Byt till ljust läge' : 'Byt till mörkt läge';
 }
 try {
   const stored = localStorage.getItem('byggbart-theme');
